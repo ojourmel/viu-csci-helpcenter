@@ -262,13 +262,13 @@
           \@ttfont\raggedright\color{@timetable#7text}%
           {\begin{center}%
             \ifthenelse{\value{@printtimestamps} > 0}%
-              {{\@timestyle \@fmtTime{@startHour}{@startMinute}}%
+              {\vspace{-0.5em}{\@timestyle \@fmtTime{@startHour}{@startMinute}}%
                 \ifthenelse{\value{@printtimestamps} = 2}%
                   {{\@timestyle --\@fmtTime{@endHour}{@endMinute}}}%
                   {}%
               \\}%
               {}%
-              {\vspace{0.1em}\LARGE#4}%
+              {\vspace{0.5em}\LARGE#4}%
           \end{center}}
          \end{minipage}}
     \addtolength{\@newrowtop}{1pt}
@@ -279,8 +279,8 @@
 
     % Lecturer
     \put(\strip@pt\@newcolleft,\strip@pt\@newrowtop)
-        {\begin{minipage}[t]{0.6\@newcolwidth}%
-	  \@ttfont\raggedright\color{@timetable#7text}{\@bottomstyle #5%
+        {\begin{minipage}[t]{0.6\@newcolwidth}\vspace{2em}%
+     \@ttfont\raggedright\color{@timetable#7text}{\@bottomstyle #5%
             \vphantom{A}}
             \ifthenelse{\value{@printtimestamps} = 1}%
               {{\@timestyle \@fmtTime{@endHour}{@endMinute}}}%
@@ -292,7 +292,7 @@
 
     % Location
     \put(\strip@pt\@newcolleft,\strip@pt\@newrowtop)
-      {\begin{minipage}[t]{0.4\@newcolwidth}%
+      {\begin{minipage}[t]{0.4\@newcolwidth}\vspace{2em}%
         \@ttfont\raggedleft\color{@timetable#7text}{\@bottomstyle #6%
           \vphantom{A}}%
       \end{minipage}}
@@ -395,11 +395,14 @@
         \ifthenelse{#2 = 1}
         {
           \addtolength{\@newrowtop}{(- \value{@topheight}\@rowheight + 2\@textframe + \heightof{\Large #3})/\value{@framevalign}}
+
+          % Center the days of the week
+          \addtolength{\@newcolleft}{(- \@textframe + 0.55\@colwidth - \widthof{\Large #3} / 2 )}
         }{}
       }
     }{}
 
-    \put(\strip@pt\@newcolleft,\strip@pt\@newrowtop){\makebox{\textcolor{ttfontcolor}{\@ttfont\large {\centering #3 }}}}
+    \put(\strip@pt\@newcolleft,\strip@pt\@newrowtop){\makebox{\textcolor{ttfontcolor}{\@ttfont \large  #3 }}}
   }
 
 \newcommand{\timemark}[1]
@@ -470,10 +473,10 @@
     \@ttforloop{@row}{\value{@topheight}}{\value{@row} < \value{@rowcount}}
     {
       \ifthenelse{\value{@minute} = 0}{
-	  	\timemark{\@fmtTime{@hour}{@minute}\ifthenelse{#3 > 0}{-\setcounter{@hour}{\value{@hour}+1}\@fmtTime{@hour}{@minute}\setcounter{@hour}{\value{@hour}-1}}{}}
-	  }{\stepcounter{@timemarks}}
-	  \addtocounter{@minute}{#2}
-	  \ifthenelse{\value{@minute} = 60}{\stepcounter{@hour}\setcounter{@minute}{0}}{}	
+      \timemark{\@fmtTime{@hour}{@minute}\ifthenelse{#3 > 0}{-\setcounter{@hour}{\value{@hour}+1}\@fmtTime{@hour}{@minute}\setcounter{@hour}{\value{@hour}-1}}{}}
+      }{\stepcounter{@timemarks}}
+     \addtocounter{@minute}{#2}
+     \ifthenelse{\value{@minute} = 60}{\stepcounter{@hour}\setcounter{@minute}{0}}{}
       \ifthenelse{\value{@hour} > 23}{\addtocounter{@hour}{-24}}{}
     }
   }
@@ -537,7 +540,7 @@
     % Minipage to correct bounding box
     \begin{minipage}[t][-\@totalheight]{\@totalwidth}
     %
-    % Begin. Note the offset hack of the picture, this is to make it consistent to the old pstricks package. 
+    % Begin. Note the offset hack of the picture, this is to make it consistent to the old pstricks package.
     \begin{picture}(\strip@pt\@totalwidth,\strip@pt\@totalheight)(0,-\strip@pt\baselineskip)
       % Draw the grey frame
       \put(0,\strip@pt\@totalheight){\textcolor{ttframecol1}{\rule[-\dp\strutbox]{\@colwidth}{-\@totalheight}}}

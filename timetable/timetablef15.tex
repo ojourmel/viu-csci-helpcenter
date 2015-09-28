@@ -22,14 +22,16 @@
 \settimestyle{\small}
 
 % Define event types
-\defineevent{oliver}{0.0} {0.28}{1.0} {1.0}{1.0}{1.0}
+\defineevent{160lab}{0.8} {0.8}{0.8} {0.4}{0.4}{0.4}
+\defineevent{oliver}{0.3} {0.38}{0.9} {1.0}{1.0}{1.0}
 \defineevent{other}{1.0} {0.4} {0.2} {1.0}{1.0}{1.0}
 \defineevent{other2} {0.21}{0.5} {0.16}{1.0}{1.0}{1.0}
 
 % Start the time table
 \begin{timetable}
-  \hours{9}{15}{1}
+  \hours{8}{15}{1}
   \englishdays{1}
+
   %\event 1 {1415} {1600} {Data Networks Lecture}                  {Druschel}        {E1{\tiny 3} 002}     {corelecture}
   %\event 1 {1615} {1800} {Tutorial SysArch}                       {Gwosdek}         {E1{\tiny 3} SR014}   {work}
   %\event 2 {0915} {1100} {Embedded Systems Lecture}               {Finkbeiner}      {E1{\tiny 3} 003}     {corelecture}
@@ -42,8 +44,21 @@
   %\event 5 {1000} {1100} {Bremser Meeting}                        {SysArch United}  {E1{\tiny 3}}         {work}
   %\event 5 {1115} {1300} {Differential Equations in IPCV Lecture} {Weickert}        {E1{\tiny 3} 001}     {corelecture}
 
-  \event 2 {1100} {1430} {Oliver}{}{}{oliver}
-  \event 4 {1130} {1630} {Oliver}{}{}{oliver}
+  \event 3 {0830} {0930} {160 Lab}{J. Beeston}{315/102}{160lab}
+  \event 3 {1030} {1130} {160 Lab}{J. Beeston}{315/102}{160lab}
+  \event 3 {1130} {1230} {160 Lab}{J. Beeston}{315/102}{160lab}
+
+  \event 4 {1030} {1130} {160 Lab}{J. Beeston}{315/102}{160lab}
+
+  \event 3 {0930} {1030} {160 Lab}{D. Wessels}{315/102}{160lab}
+
+  \event 5 {0930} {1030} {160 Lab}{D. Wessels}{315/102}{160lab}
+  \event 5 {1030} {1130} {160 Lab}{D. Wessels}{315/102}{160lab}
+  \event 5 {1430} {1530} {160 Lab}{D. Wessels}{315/102}{160lab}
+
+
+  \event 2 {1100} {1430} {Oliver}{Help Center}{315/102}{oliver}
+  \event 4 {1130} {1630} {Oliver}{Help Center}{315/102}{oliver}
 
 \end{timetable}
 \end{landscape}

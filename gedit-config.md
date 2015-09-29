@@ -12,25 +12,25 @@ Under the **`Edit`** `->` **`Preferences`** file menu
 1. **View**
 
   * Select `Display line numbers`
-  
+
   * Select `Display right margin at column`, and insert `80`
 
   * Select `Highlight current line`
-  
-  * Select `Highlight matching brackets`
+
+  * Select `Highlight current line`
 
 2. **Editor**
 
  * Set `Tab width:` to `4`
- 
+
  * Select `Insert spaces instead of tabs`
- 
+
  * Unselect `Enable automatic indentation`
 
  * Unselect `Create a backup copy of files before saving`
- 
+
  * Unselect `Autosave files every 10 minutes`
- 
+
 3. **Font & Colors**
 
  * Select the `Color Scheme` that you prefer (`Oblivion` is a good dark scheme)

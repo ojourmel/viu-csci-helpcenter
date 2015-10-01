@@ -17,7 +17,7 @@ Under the **`Edit`** `->` **`Preferences`** file menu
 
   * Select `Highlight current line`
 
-  * Select `Highlight current line`
+  * Select `Highlight matching brackets`
 
 2. **Editor**
 

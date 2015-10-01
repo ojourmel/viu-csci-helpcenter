@@ -21,7 +21,7 @@ Under the **`Edit`** `->` **`Preferences`** file menu
 
 2. **Editor**
 
- * Set `Tab width:` to `4`
+ * Set `Tab width:` to `3`
 
  * Select `Insert spaces instead of tabs`
 
@@ -34,3 +34,8 @@ Under the **`Edit`** `->` **`Preferences`** file menu
 3. **Font & Colors**
 
  * Select the `Color Scheme` that you prefer (`Oblivion` is a good dark scheme)
+
+4. **Plugins**
+
+ * Select the `Draw Spaces` plugin (depending on preference)
+
